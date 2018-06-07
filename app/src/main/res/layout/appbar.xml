@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+     android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/hj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:textAlignment="center"
+        android:textColorHint="#f0f7f4"
+        android:theme="@style/TextLabel"
+        app:hintTextAppearance="@style/anand">
+
+        <EditText
+            android:id="@+id/storename"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:background="@android:color/transparent"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:hint="NAME OF STORE"
+            android:inputType="textEmailAddress"
+            android:paddingBottom="2dp"
+            android:textAlignment="center"
+            android:textColor="#f0f7f4"
+            android:textCursorDrawable="@drawable/bg_input_cursor_2"
+            android:textSize="25dp"
+            android:typeface="monospace" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/hj2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#f0f7f4"
+        android:theme="@style/TextLabel"
+        android:textAlignment="center"
+        app:hintTextAppearance="@style/anand"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <EditText
+            android:focusableInTouchMode="true"
+            android:id="@+id/storephoneno"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:background="@android:color/transparent"
+            android:hint="CONTACT NO"
+            android:inputType="textEmailAddress"
+            android:paddingBottom="2dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#f0f7f4"
+            android:textCursorDrawable="@drawable/bg_input_cursor_2"
+            android:textSize="25dp"
+            android:typeface="monospace"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/hj3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#f0f7f4"
+        android:theme="@style/TextLabel"
+        android:textAlignment="center"
+        app:hintTextAppearance="@style/anand"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+        <EditText
+            android:focusableInTouchMode="true"
+            android:id="@+id/placeofstore"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:background="@android:color/transparent"
+            android:hint="PLACE OF STORE"
+            android:inputType="textEmailAddress"
+            android:paddingBottom="2dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#f0f7f4"
+            android:textCursorDrawable="@drawable/bg_input_cursor_2"
+            android:textSize="25dp"
+            android:typeface="monospace"/>
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>

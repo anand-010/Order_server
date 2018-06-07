@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <EditText
+            android:id="@+id/edi"
+            android:layout_width="241dp"
+            android:layout_height="54dp"
+            android:background="@drawable/shape"
+            android:inputType="text"
+            android:layout_weight="14.29" />
+
+        <ImageView
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="5dp"
+            android:id="@+id/imageView9"
+            android:layout_width="60dp"
+            android:layout_height="58dp"
+            android:src="@drawable/magnifying_glass"
+            android:layout_weight="2"/>
+
+    </LinearLayout>
+
+<android.support.v7.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/recyclerview"></android.support.v7.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="TextView" />
+</LinearLayout>
