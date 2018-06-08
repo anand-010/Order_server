@@ -58,7 +58,6 @@ private final int PICK_IMAGE_REQUEST=72;
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setupWindowAnimations();
         setContentView(R.layout.newprofilecopy);
            rootref = FirebaseDatabase.getInstance().getReference().getRoot();
         name = (EditText) findViewById(R.id.storename);
@@ -186,9 +185,5 @@ Bundle b = data.getExtras();
 
             Toast.makeText(profile.this, "worked", Toast.LENGTH_SHORT).show();
         }
-    }
-    private void setupWindowAnimations() {
-        Slide slide = (Slide) TransitionInflater.from(this).inflateTransition(R.transition.activity_slide);
-        getWindow().setExitTransition(slide);
     }
 }

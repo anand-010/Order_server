@@ -66,7 +66,7 @@ if (auth.getCurrentUser()!=null){
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (!task.isSuccessful()) {
-                                    Toast.makeText(jkl.this, "Authentication failed." + task.getException(),
+                                    Toast.makeText(jkl.this, "compleated" + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
                                     startActivity(new Intent(jkl.this, profile.class));

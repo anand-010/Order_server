@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
  * Created by anand on 6/2/2018.
  */
 
-public class bitmaphelper {
+public class bitmaphelper  {
     public void setBitmap(Bitmap bitmap) {
         this.bitmap = bitmap;
     }
@@ -15,5 +15,5 @@ public class bitmaphelper {
         return bitmap;
     }
 
-    Bitmap bitmap;
+    static Bitmap bitmap;
 }
