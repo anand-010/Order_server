@@ -29,10 +29,13 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
@@ -126,7 +129,9 @@ overridePendingTransition(R.anim.slideleft,R.anim.slideleft);
     private void upload() {
             Toast.makeText(profile.this, "starting ", Toast.LENGTH_SHORT).show();
             StorageReference ref = refferance.child("server/images/profilepictures"+FirebaseAuth.getInstance().getCurrentUser().getUid());
-            ref.putFile(imageUri)
+        /**
+
+        ref.putFile(imageUri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -138,6 +143,23 @@ overridePendingTransition(R.anim.slideleft,R.anim.slideleft);
                             rootref.child("server/users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).updateChildren(map);
                         }
                     });
+         */
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        croppedimage.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] data = baos.toByteArray();
+        ref.putBytes(data)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        url = taskSnapshot.getDownloadUrl().toString();
+                        Toast.makeText(profile.this, "compleated", Toast.LENGTH_SHORT).show();
+                        map.put("profilepic",url);
+                        map.put("coverfoto", "httpskl");
+
+                        rootref.child("server/users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).updateChildren(map);
+                    }
+                });
     }
 
     private void choseimage() {
@@ -169,16 +191,17 @@ overridePendingTransition(R.anim.slideleft,R.anim.slideleft);
 
         }
         if (requestCode == 83 && resultCode == RESULT_OK){
+
+
             Bundle extras = getIntent().getExtras();
             String fileName = "1.jpg";
             int i = 0;
             String completePath = Environment.getExternalStorageDirectory() + "/" + String.valueOf(i)+"FitnessGirl.jpg";
             i +=1;
-            Bitmap bitmap;
             bitmaphelper bitmaphelper = new bitmaphelper();
-            bitmap = bitmaphelper.getBitmap();
+            croppedimage = bitmaphelper.getBitmap();
+             /**
 
-            /**
             File file = new File(completePath);
             imageUri = Uri.fromFile(file);
             Glide.with(this)
@@ -187,7 +210,7 @@ overridePendingTransition(R.anim.slideleft,R.anim.slideleft);
 
             Toast.makeText(profile.this, "worked", Toast.LENGTH_SHORT).show();
              */
-            circular.setImageBitmap(bitmap);
+            circular.setImageBitmap(croppedimage);
         }
     }
 }
