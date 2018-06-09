@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 public class cookiecutter extends AppCompatActivity {
-    public Bitmap bitmap,croppedimg;
+    public Bitmap croppedimg;
     Button button;
      CropImageView cropImageView;
     @Override
