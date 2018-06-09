@@ -46,7 +46,10 @@ button.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
         croppedimg = cropImageView.getCroppedImage();
+        bitmaphelper bitmap = new  bitmaphelper();
+        bitmap.setBitmap(croppedimg);
 
+        /**
         String path = Environment.getExternalStorageDirectory().toString();
         OutputStream fOut = null;
         Integer counter = 0;
@@ -64,6 +67,7 @@ button.setOnClickListener(new View.OnClickListener() {
         } catch (IOException e) {
             e.printStackTrace();
         }
+         */
         Intent data = new Intent();
         data.putExtra("anands","hallow");
         setResult(RESULT_OK, data);

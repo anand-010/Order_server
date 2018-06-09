@@ -174,9 +174,11 @@ overridePendingTransition(R.anim.slideleft,R.anim.slideleft);
             int i = 0;
             String completePath = Environment.getExternalStorageDirectory() + "/" + String.valueOf(i)+"FitnessGirl.jpg";
             i +=1;
+            Bitmap bitmap;
+            bitmaphelper bitmaphelper = new bitmaphelper();
+            bitmap = bitmaphelper.getBitmap();
 
-Bundle b = data.getExtras();
-
+            /**
             File file = new File(completePath);
             imageUri = Uri.fromFile(file);
             Glide.with(this)
@@ -184,6 +186,8 @@ Bundle b = data.getExtras();
                     .into(circular);
 
             Toast.makeText(profile.this, "worked", Toast.LENGTH_SHORT).show();
+             */
+            circular.setImageBitmap(bitmap);
         }
     }
 }
