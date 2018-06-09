@@ -33,12 +33,15 @@ public class cookiecutter extends AppCompatActivity {
         Bundle b =getIntent().getExtras();
         if (b!=null){
             Uri uri= (Uri) b.get("anands");
+            /**
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                 cropImageView.setImageBitmap(bitmap);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+             */
+            cropImageView.setImageUriAsync(uri);
         }
 
 
