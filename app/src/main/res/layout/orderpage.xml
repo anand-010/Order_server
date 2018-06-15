@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout
+    android:layout_height="250dp"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    >
+<ImageView
+    android:layout_width="112dp"
+    android:layout_height="109dp"
+    android:src="@drawable/anands18"
+    android:background="@drawable/anands4"
+    tools:layout_editor_absoluteY="0dp"
+    tools:layout_editor_absoluteX="0dp"
+    android:id="@+id/imageView" />
+<LinearLayout
+    android:layout_width="115dp"
+    android:layout_height="136dp"
+    android:orientation="vertical"
+    tools:layout_editor_absoluteX="0dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:layout_marginBottom="8dp"
+    tools:ignore="MissingConstraints"
+    android:background="@drawable/anands10">
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="25dp"
+        android:text="Anand s"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_height="30dp"
+        android:textSize="18dp"
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:text="9288907423"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:textSize="18dp"
+        android:id="@+id/place"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:text="cherthala"
+        android:gravity="center"
+        />
+    <ImageView
+
+        android:layout_marginTop="10dp"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/anands19"
+        android:layout_marginBottom="8dp"/>
+</LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/imageView"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/anands9"
+        android:layout_marginStart="8dp"
+        android:id="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.0">
+<LinearLayout
+    android:layout_marginRight="15dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginTop="10dp"
+    android:weightSum="100"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="50"
+        android:text="items"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="33"
+        android:text="quantity"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="18"
+        android:text="calculated
+prize"
+        android:gravity="center"/>
+</LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@drawable/anands12"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal"
+      >
+
+<LinearLayout
+    android:layout_marginLeft="15dp"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/item1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="item"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/item2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="item"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/item3"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="item"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/item4"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="item"
+            android:gravity="center"/>
+        <TextView
+            android:id="@+id/item5"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="item"
+            android:gravity="center"/>
+    <TextView
+        android:id="@+id/item6"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="item"
+        android:gravity="center"/>
+
+    </LinearLayout>
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+            <TextView
+                android:id="@+id/quantity1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="5kg"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/quantity2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="5kg" />
+
+            <TextView
+                android:id="@+id/quantity3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="5kg"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/quantity4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="5kg" />
+
+            <TextView
+                android:id="@+id/quantity5"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="5kg"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/quantity6"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="5kg"
+                android:gravity="center"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/calprize1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="150rs"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/calprize2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="150rs"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/calprize3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="150rs"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/calprize4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="150rs"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/calprize5"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="150rs"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/calprize6"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="150rs"
+                android:gravity="center"/>
+        </LinearLayout>
+    </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
