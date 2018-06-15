@@ -7,15 +7,16 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:orientation="horizontal"
-        android:weightSum="10">
+        android:weightSum="10"
+        android:background="@drawable/rect">
 
         <EditText
+            android:layout_marginLeft="20dp"
             android:id="@+id/edi"
             android:layout_width="241dp"
             android:layout_height="54dp"
-            android:background="@drawable/shape"
             android:inputType="text"
-            android:layout_weight="14.29" />
+            android:layout_weight="9" />
 
         <ImageView
             android:layout_marginLeft="2dp"

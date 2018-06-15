@@ -13,12 +13,13 @@ import de.hdodenhof.circleimageview.CircleImageView;
  */
 
 public class mainview extends AppCompatActivity {
-    CircleImageView circleImageView,mapview;
+    CircleImageView circleImageView,mapview,circleImageView1;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newmainviewcopy);
 circleImageView=(CircleImageView)findViewById(R.id.imageView12);
+        circleImageView1=(CircleImageView)findViewById(R.id.imageView11);
         mapview=(CircleImageView)findViewById(R.id.imageView13);
         circleImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,10 +29,10 @@ circleImageView=(CircleImageView)findViewById(R.id.imageView12);
 
             }
         });
-        mapview.setOnClickListener(new View.OnClickListener() {
+        circleImageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(mainview.this,MainActivity.class));
+                startActivity(new Intent(mainview.this,orderactivity.class));
             }
         });
     }

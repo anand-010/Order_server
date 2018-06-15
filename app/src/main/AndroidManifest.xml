@@ -26,10 +26,9 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".profile" />
         <activity android:name=".mainview" />
-        <activity android:name=".MainActivity" />
         <activity android:name=".serch" />
-        <activity android:name=".cookiecutter"></activity>
-
-</application>
+        <activity android:name=".cookiecutter"/>
+        <activity android:name=".orderactivity"/>
+    </application>
 
 </manifest>
