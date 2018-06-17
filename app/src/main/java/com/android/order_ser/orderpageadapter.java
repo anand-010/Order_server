@@ -19,7 +19,6 @@ import java.util.List;
 
 public class orderpageadapter extends RecyclerView.Adapter<orderpageadapter.ViewHolder> {
     List<String> namelist;//,phoneno,placelist,items,quantity,prize;
-
     public class ViewHolder extends RecyclerView.ViewHolder{
         public View layout;
         TextView name;/*,phonenumber,place,item1,
@@ -64,7 +63,7 @@ public class orderpageadapter extends RecyclerView.Adapter<orderpageadapter.View
         this.namelist = namelist;
 
     }
-
+    public void anand(){notify();}
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(
@@ -103,6 +102,16 @@ public class orderpageadapter extends RecyclerView.Adapter<orderpageadapter.View
     @Override
     public int getItemCount() {
         return namelist.size();
+    }
+
+    public void add(int position, String item) {
+        namelist.add(position, item);
+        notifyItemInserted(position);
+    }
+
+    public void remove(int position) {
+        namelist.remove(position);
+        notifyItemRemoved(position);
     }
 }
 
