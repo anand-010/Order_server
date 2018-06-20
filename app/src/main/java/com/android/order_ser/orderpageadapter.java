@@ -18,21 +18,21 @@ import java.util.List;
  */
 
 public class orderpageadapter extends RecyclerView.Adapter<orderpageadapter.ViewHolder> {
-    List<String> namelist;//,phoneno,placelist,items,quantity,prize;
+    List<String> namelist,phonenolist,placelist,items,quantity,prize;
     public class ViewHolder extends RecyclerView.ViewHolder{
         public View layout;
-        TextView name;/*,phonenumber,place,item1,
+        TextView name,phonenumber,place,item1,
                 item2,item3,item4,item5,item6
                 ,quantity1,quantity2,quantity3,
                 quantity4,quantity5,quantity6,
                 prize1,prize2,prize3,prize4,prize5,prize6;
-        Button accept,reject,reliability */
+        Button accept,reject,reliability;
         public ViewHolder(View itemView) {
             super(itemView);
             layout = itemView;
             name = (TextView)itemView.findViewById(R.id.textView13);
 
-            /*phonenumber = (TextView)itemView.findViewById(R.id.textView14);
+            phonenumber = (TextView)itemView.findViewById(R.id.textView14);
             item1 = (TextView)itemView.findViewById(R.id.item1);
             item2 = (TextView)itemView.findViewById(R.id.item2);
             item3 = (TextView)itemView.findViewById(R.id.item3);
@@ -53,14 +53,21 @@ public class orderpageadapter extends RecyclerView.Adapter<orderpageadapter.View
             prize6 = (TextView)itemView.findViewById(R.id.calprize6);
             accept = (Button) itemView.findViewById(R.id.accept);
             reject = (Button) itemView.findViewById(R.id.reject);
+            place = (TextView)itemView.findViewById(R.id.place);
             reliability = (Button) itemView.findViewById(R.id.reliability);
-*/
 
         }
     }
-    public orderpageadapter(List<String> namelist){
+    public orderpageadapter(List<String> namelist,List<String> phonenolist,
+                            List<String> placelist,List<String> items,
+                            List<String> quantity,List<String> prize){
 
         this.namelist = namelist;
+        this.phonenolist     = phonenolist    ;
+        this.placelist   = placelist  ;
+        this.items       = items      ;
+        this.quantity    = quantity   ;
+        this.prize       = prize      ;
 
     }
     public void anand(){notify();}
@@ -78,7 +85,7 @@ public class orderpageadapter extends RecyclerView.Adapter<orderpageadapter.View
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         final String names = namelist.get(position);
-        /*final String phone = phoneno.get(position);
+        final String phone = phonenolist.get(position);
         final String placelists = placelist.get(position);
         final String itemss = items.get(position);
         final String quantitys  = quantity.get(position);
@@ -90,13 +97,7 @@ public class orderpageadapter extends RecyclerView.Adapter<orderpageadapter.View
         holder.item1.setText(itemss);
         holder.quantity1.setText(quantitys);
         holder.prize1.setText(prizes);
-        */
-        holder.name.setText(names);
-        holder.name.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
+
     }
 
     @Override

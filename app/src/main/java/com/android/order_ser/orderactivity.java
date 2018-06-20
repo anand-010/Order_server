@@ -28,6 +28,11 @@ public class orderactivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private List<String> phoneno     = new ArrayList<>();
+    private List<String> placelist   = new ArrayList<>();
+    private List<String> items       = new ArrayList<>();
+    private List<String> quantity    = new ArrayList<>();
+    private List<String> prize       = new ArrayList<>();
     private List<String> names = new ArrayList<>();
     userdatas userdatas = new userdatas();
     DatabaseReference rootref, orders;
@@ -37,7 +42,7 @@ public class orderactivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.itemsmanagement);
         rootref = userdatas.rootref();
-        mAdapter = new orderpageadapter(names);
+        mAdapter = new orderpageadapter(names,phoneno,placelist,items,quantity,prize);
         orders = rootref.child("server").child("users").child(userdatas.getuid()).child("orders");
         orders.addChildEventListener(new ChildEventListener() {
             @Override
@@ -102,7 +107,11 @@ public class orderactivity extends AppCompatActivity {
             //se.add((((DataSnapshot) i.next()).getKey()));
             //names.addAll(se);
             names.add((((DataSnapshot) i.next()).getKey()));
-
+            phoneno   .add((((DataSnapshot) i.next()).getKey()));
+            placelist .add((((DataSnapshot) i.next()).getKey()));
+            items     .add((((DataSnapshot) i.next()).getKey()));
+            quantity  .add((((DataSnapshot) i.next()).getKey()));
+            prize     .add((((DataSnapshot) i.next()).getKey()));
         }
         mAdapter.notifyDataSetChanged();
     }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:icon="@mipmap/ic_launcher"
+    android:title="anand" />
+    <item android:icon="@mipmap/ic_launcher"
+        android:title="add" />
+    <item android:icon="@mipmap/ic_launcher"
+        android:title="sort" />
+    <item android:icon="@mipmap/ic_launcher"
+        android:title="cop" />
+</menu>
