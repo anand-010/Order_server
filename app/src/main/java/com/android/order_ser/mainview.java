@@ -18,9 +18,8 @@ public class mainview extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newmainviewcopy);
-circleImageView=(CircleImageView)findViewById(R.id.imageView12);
-        circleImageView1=(CircleImageView)findViewById(R.id.imageView11);
-        mapview=(CircleImageView)findViewById(R.id.imageView13);
+circleImageView=(CircleImageView)findViewById(R.id.history);
+        circleImageView1=(CircleImageView)findViewById(R.id.prop);
         circleImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

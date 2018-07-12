@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="mycircleview">
+    <attr name="circle_colour" format="color"/>
+    <attr name="circle_label" format="string"/>
+    <attr name="label_colour" format="color"/>
+    </declare-styleable>
+</resources>
