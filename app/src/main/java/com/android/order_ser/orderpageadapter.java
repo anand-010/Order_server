@@ -1,15 +1,19 @@
 package com.android.order_ser;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -18,7 +22,9 @@ import java.util.List;
  */
 
 public class orderpageadapter extends RecyclerView.Adapter<orderpageadapter.ViewHolder> {
-    List<String> namelist,phonenolist,placelist,items,quantity,prize;
+    int k=0,d=0,c=0;
+    List<String> namelist,phonenolist,placelist,items,quantity,prize,tempitem;
+
     public class ViewHolder extends RecyclerView.ViewHolder{
         public View layout;
         TextView name,phonenumber,place,item1,
@@ -28,10 +34,11 @@ public class orderpageadapter extends RecyclerView.Adapter<orderpageadapter.View
                 prize1,prize2,prize3,prize4,prize5,prize6;
         Button accept,reject,reliability;
         public ViewHolder(View itemView) {
+
             super(itemView);
             layout = itemView;
             name = (TextView)itemView.findViewById(R.id.textView13);
-
+            tempitem = new ArrayList<>();
             phonenumber = (TextView)itemView.findViewById(R.id.textView14);
             item1 = (TextView)itemView.findViewById(R.id.item1);
             item2 = (TextView)itemView.findViewById(R.id.item2);
@@ -65,7 +72,7 @@ public class orderpageadapter extends RecyclerView.Adapter<orderpageadapter.View
         this.namelist = namelist;
         this.phonenolist     = phonenolist    ;
         this.placelist   = placelist  ;
-        this.items       = items      ;
+        this.items      = items;
         this.quantity    = quantity   ;
         this.prize       = prize      ;
 
@@ -84,19 +91,51 @@ public class orderpageadapter extends RecyclerView.Adapter<orderpageadapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final String names = namelist.get(position);
-        final String phone = phonenolist.get(position);
-        final String placelists = placelist.get(position);
-        final String itemss = items.get(position);
-        final String quantitys  = quantity.get(position);
-        final String prizes  = prize.get(position);
+            for (d=0;d<6;d++){
+                switch (d){
+                    case 0: holder.item1.setText(items.get(d+position*6)); break;
+                    case 1: holder.item2.setText(items.get(d+position*6)); break;
+                    case 2: holder.item3.setText(items.get(d+position*6)); break;
+                    case 3: holder.item4.setText(items.get(d+position*6)); break;
+                    case 4: holder.item5.setText(items.get(d+position*6)); break;
+                    case 5: holder.item6.setText(items.get(d+position*6)); break;
+                }
+        }
 
-        holder.name.setText(names);
-        holder.phonenumber.setText(phone);
-        holder.place.setText(placelists);
-        holder.item1.setText(itemss);
-        holder.quantity1.setText(quantitys);
-        holder.prize1.setText(prizes);
+        if (namelist.size()>position) {
+            String names = namelist.get(position);
+            holder.name.setText(names);
+        }
+        if (phonenolist.size()>position) {
+            String phone = phonenolist.get(position);
+            holder.phonenumber.setText(phone);
+        }
+        if (phonenolist.size()>position)
+        {
+            String placelists = placelist.get(position);
+            holder.place.setText(placelists);
+        }
+        if (items.size()>position){
+            String itr = items.get(position);
+            holder.item1.setText(itr);
+        }
+        if (quantity.size()>position){
+            String quantitys = quantity.get(position);
+            holder.quantity1.setText(quantitys);
+        }
+        if (prize.size()>position){
+            String prizes = prize.get(position);
+            holder.prize1.setText(prizes);
+        }
+
+
+
+
+
+
+
+
+        //new
 
     }
 

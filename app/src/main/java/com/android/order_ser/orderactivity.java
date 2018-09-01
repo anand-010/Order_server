@@ -6,7 +6,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
+import android.util.Log;
+import android.widget.TextView;
+import android.widget.Toast;
 import com.android.order_ser.helperclassess.Order_projo;
 import com.android.order_ser.helperclassess.userdatas;
 import com.google.firebase.database.ChildEventListener;
@@ -27,6 +29,7 @@ import java.util.Set;
  */
 
 public class orderactivity extends AppCompatActivity {
+    int c=0;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
@@ -36,13 +39,16 @@ public class orderactivity extends AppCompatActivity {
     private List<String> quantity    = new ArrayList<>();
     private List<String> prize       = new ArrayList<>();
     private List<String> names = new ArrayList<>();
+    private List<String> itemlist = new ArrayList<>();
     userdatas userdatas = new userdatas();
     DatabaseReference rootref, orders;
-
+//test
+    private TextView textView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.itemsmanagement);
+//        textView = (TextView)findViewById(R.id.testone);
         rootref = FirebaseDatabase.getInstance().getReference().getRoot();
         mAdapter = new orderpageadapter(names,phoneno,placelist,items,quantity,prize);
         orders = rootref.child("server").child("users").child(userdatas.getuid()).child("orders");
@@ -52,12 +58,14 @@ public class orderactivity extends AppCompatActivity {
 
 
                 listmanage(dataSnapshot);
+                mAdapter.notifyDataSetChanged();
             }
 
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
                 listmanage(dataSnapshot);
+                mAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -74,23 +82,7 @@ public class orderactivity extends AppCompatActivity {
             public void onCancelled(DatabaseError databaseError) {
             }
         });
-
-           /*  orders.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    Iterator i =dataSnapshot.getChildren().iterator();
-                    Set<String> se = new HashSet<String>();
-                    while(i.hasNext()){
-                        se.add((((DataSnapshot)i.next()).getKey()));
-                        names.clear();
-                        names.addAll(se);
-                }
-            }
-                @Override
-                public void onCancelled(DatabaseError databaseError) {
-
-                }
-            });*/
+//new
         recyclerView = (RecyclerView) findViewById(R.id.recv);
         recyclerView.setHasFixedSize(true);
         // use a linear layout manager
@@ -100,8 +92,34 @@ public class orderactivity extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
 
     }
-
+    //new
+    DataSnapshot sth;
+    String fg="d :";
     public void listmanage(DataSnapshot dataSnapshot) {
+        Order_projo order_projo = dataSnapshot.getValue(Order_projo.class);
+        names     .add(order_projo.getNames());
+        phoneno   .add(order_projo.getPhoneno());
+        placelist .add(order_projo.getPlacelist());
+        //items     .add(order_projo.getItems());
+        quantity  .add(order_projo.getQuantity());
+        prize     .add(order_projo.getPrize());
+
+        sth = dataSnapshot.child(String.valueOf("itemlist"));
+        Iterator i = sth.getChildren().iterator();
+        while (i.hasNext()) {
+            items.add(((DataSnapshot) i.next()).getValue().toString());
+
+        }Toast.makeText(this, items.toString(), Toast.LENGTH_SHORT).show();
+//        items.add("ende");
+//        for (int t=1 ;t<listOLists.size();t++){
+//
+//        for (int k =0; k<items.size();k++)
+//        {
+//            fg = fg +items.get(k);
+//            textView.setText(fg);
+//        }
+//        }
+          // textView.setText((CharSequence) items);
         /*Iterator i = dataSnapshot.getChildren().iterator();
         Set<String> se = new HashSet<String>();
         while (i.hasNext()) {
@@ -114,13 +132,5 @@ public class orderactivity extends AppCompatActivity {
             quantity  .add((((DataSnapshot) i.next()).getKey()));
             prize     .add((((DataSnapshot) i.next()).getKey()));
         }*/
-        Order_projo order_projo = dataSnapshot.getValue(Order_projo.class);
-        names     .add(order_projo.getNames());
-        phoneno   .add(order_projo.getPhoneno());
-        placelist .add(order_projo.getPlacelist());
-        items     .add(order_projo.getItems());
-        quantity  .add(order_projo.getQuantity());
-        prize     .add(order_projo.getPrize());
-        mAdapter.notifyDataSetChanged();
     }
 }

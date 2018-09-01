@@ -22,10 +22,10 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintRight_toRightOf="parent"
-    android:id="@+id/view2" />
+    android:id="@+id/status" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="onion"
@@ -45,7 +45,7 @@
         android:layout_marginEnd="8dp" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="updated 4 days ago"
@@ -65,7 +65,7 @@
         android:layout_marginEnd="8dp" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="50 rs/kg"

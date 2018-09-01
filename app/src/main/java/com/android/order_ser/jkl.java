@@ -44,10 +44,11 @@ if (auth.getCurrentUser()!=null){
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getWindow().setExitTransition(null);
-                getWindow().setEnterTransition(null);
+
 
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setExitTransition(null);
+                    getWindow().setEnterTransition(null);
                     ActivityOptions options =
                             ActivityOptions.makeSceneTransitionAnimation(jkl.this, register,"register");
                     startActivity(new Intent(jkl.this, RegisterActivity.class), options.toBundle());
@@ -72,6 +73,7 @@ if (auth.getCurrentUser()!=null){
                                     startActivity(new Intent(jkl.this, profile.class));
                                     finish();
                                 }
+
                             }
                         });
             }

@@ -1,6 +1,8 @@
 package com.android.order_ser;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -42,26 +44,28 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * Created by anand on 5/23/2018.
  */
 
-public class profile extends AppCompatActivity {
-    EditText name, age, place;
-    Button propicset, coverfoto, next;
-    DatabaseReference rootref;
-    Map<String, Object> map = new HashMap<String, Object>();
-    Uri filepath;
-    CircleImageView circular;
-    FirebaseStorage storage;
-    StorageReference refferance;
-    String url,url3;
-    Uri imageUri;
-    boolean on = false;
-    Bitmap croppedimage;
+public class profile extends AppCompatActivity{
+    private SharedPreferences sharedpreferences;
+    private EditText name, age, place;
+    private Button propicset, coverfoto, next;
+    private DatabaseReference rootref;
+    private Map<String, Object> map = new HashMap<String, Object>();
+    private Uri filepath;
+    private CircleImageView circular;
+    private FirebaseStorage storage;
+    private StorageReference refferance;
+    private String url,url3;
+    private Uri imageUri;
+    private boolean on = false;
+    private Bitmap croppedimage;
     public Bitmap bitmap;
 private final int PICK_IMAGE_REQUEST=72;
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.newprofilecopy);
+        setContentView(R.layout.newprofile);
+        sharedpreferences = getSharedPreferences("login_or_not", Context.MODE_PRIVATE);
            rootref = FirebaseDatabase.getInstance().getReference().getRoot();
         name = (EditText) findViewById(R.id.storename);
         age = (EditText) findViewById(R.id.storephoneno);
@@ -71,7 +75,10 @@ private final int PICK_IMAGE_REQUEST=72;
         storage = FirebaseStorage.getInstance();
         refferance = storage.getReference();
         circular = (CircleImageView) findViewById(R.id.circularImageView2);
-
+        Boolean status_ = (sharedpreferences.getBoolean("login_status",false));
+        if (status_){
+            startActivity(new Intent(profile.this,mainview.class));
+        }
         rootref.child("server/users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -112,7 +119,10 @@ private final int PICK_IMAGE_REQUEST=72;
                 map.put("coverfoto", "httpskl");
 
                 rootref.child("server/users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).updateChildren(map);
-overridePendingTransition(R.anim.slideleft,R.anim.slideleft);
+                overridePendingTransition(R.anim.slideleft,R.anim.slideleft);
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putBoolean("login_status",true);
+                editor.commit();
                 Intent intent = new Intent(profile.this,mainview.class);
                 startActivity(intent);
             }

@@ -30,6 +30,7 @@
         <activity android:name=".cookiecutter"/>
         <activity android:name=".orderactivity"/>
         <activity android:name=".jkl"/>
+        <activity android:name=".itemmanagementactivity"/>
     </application>
 
 </manifest>

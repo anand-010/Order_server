@@ -103,7 +103,7 @@
             android:src="@drawable/choices"
             android:layout_columnWeight="4"
             android:layout_rowWeight="4"
-
+            android:id="@+id/list"
 
             />
         <TextView
@@ -163,7 +163,7 @@
             android:src="@drawable/proposal__1_"
             android:layout_columnWeight="4"
             android:layout_rowWeight="4"
-
+            android:id="@+id/prop"
 
             />
         <TextView
@@ -223,7 +223,7 @@
             android:src="@drawable/dfg"
             android:layout_columnWeight="4"
             android:layout_rowWeight="4"
-
+            android:id="@+id/history"
 
             />
         <TextView

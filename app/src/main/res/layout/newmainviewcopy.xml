@@ -16,6 +16,7 @@
             android:layout_height="200dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/prop"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
@@ -26,6 +27,7 @@
                 android:src="@drawable/magnifying_glass" />
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/list"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
@@ -33,7 +35,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_weight="50"
-                android:src="@drawable/subscription" />
+                android:src="@drawable/subscription"
+                tools:ignore="InvalidId" />
         </LinearLayout>
 
         <LinearLayout
@@ -90,7 +93,6 @@
             android:layout_height="200dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/prop"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
